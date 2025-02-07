@@ -46,14 +46,14 @@ load_dotenv()
 
 def get_kafka_topic() -> str:
     """Fetch Kafka topic from environment or use default."""
-    topic = os.getenv("BUZZ_TOPIC", "unknown_topic")
+    topic = os.getenv("NEWS_TOPIC", "unknown_topic")
     logger.info(f"Kafka topic: {topic}")
     return topic
 
 
 def get_message_interval() -> int:
     """Fetch message interval from environment or use default."""
-    interval = int(os.getenv("BUZZ_INTERVAL_SECONDS", 1))
+    interval = int(os.getenv("NEWS_INTERVAL_SECONDS", 5))
     logger.info(f"Message interval: {interval} seconds")
     return interval
 
@@ -72,7 +72,7 @@ DATA_FOLDER: pathlib.Path = PROJECT_ROOT.joinpath("data")
 logger.info(f"Data folder: {DATA_FOLDER}")
 
 # Set the name of the data file
-DATA_FILE: pathlib.Path = DATA_FOLDER.joinpath("buzz.json")
+DATA_FILE: pathlib.Path = DATA_FOLDER.joinpath("news.json")
 logger.info(f"Data file: {DATA_FILE}")
 
 #####################################

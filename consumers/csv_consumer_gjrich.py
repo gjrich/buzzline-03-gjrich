@@ -140,6 +140,28 @@ def process_message(message: str, rolling_window: deque, window_size: int) -> No
                 f"STALL DETECTED at {timestamp}: Temp stable at {temperature}°F over last {window_size} readings."
             )
 
+        # Define temperature thresholds and messages (add this at the top of the function)
+        TEMP_THRESHOLDS = {
+            203: ["beef burnt ends", "beef brisket"],
+            195: ["baby back ribs"],
+            165: ["smoked turkey"],
+            201: ["pork shoulder"]
+        }
+
+        # Add this dictionary to track if we've already alerted for each food
+        if not hasattr(process_message, 'alerted_foods'):
+            process_message.alerted_foods = set()
+
+        # Check temperature thresholds (add this after the stall detection)
+        for threshold, foods in TEMP_THRESHOLDS.items():
+            if temperature >= threshold:
+                for food in foods:
+                    # Create a unique key for each food to track alerts
+                    alert_key = f"{food}_{threshold}"
+                    if alert_key not in process_message.alerted_foods:
+                        logger.info(f"FOOD READY ALERT at {timestamp}: If you're cooking {food}, it's ready to pull out! Temperature has reached {temperature}°F")
+                        process_message.alerted_foods.add(alert_key)
+
     except json.JSONDecodeError as e:
         logger.error(f"JSON decoding error for message '{message}': {e}")
     except Exception as e:

@@ -55,6 +55,19 @@ def get_message_interval() -> int:
     logger.info(f"Message interval: {interval} seconds")
     return interval
 
+def get_temperature_bounds() -> tuple:
+    """Fetch temperature bounds from environment or use defaults."""
+    min_temp = float(os.getenv("SMOKER_MIN_TEMP", 32.0))  # freezing
+    max_temp = float(os.getenv("SMOKER_MAX_TEMP", 500.0))  # max typical smoker temp
+    logger.info(f"Temperature bounds: {min_temp}°F to {max_temp}°F")
+    return min_temp, max_temp
+
+def validate_temperature(temp: float, min_temp: float, max_temp: float) -> bool:
+    """Validate temperature is within acceptable bounds."""
+    if not (min_temp <= temp <= max_temp):
+        logger.warning(f"Temperature {temp}°F outside bounds [{min_temp}°F, {max_temp}°F]")
+        return False
+    return True
 
 #####################################
 # Set up Paths

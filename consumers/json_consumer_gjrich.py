@@ -29,6 +29,10 @@ from dotenv import load_dotenv
 from utils.utils_consumer import create_kafka_consumer
 from utils.utils_logger import logger
 
+# Import for Sentiment Analysis
+from textblob import TextBlob
+
+
 #####################################
 # Load Environment Variables
 #####################################
@@ -42,14 +46,14 @@ load_dotenv()
 
 def get_kafka_topic() -> str:
     """Fetch Kafka topic from environment or use default."""
-    topic = os.getenv("BUZZ_TOPIC", "unknown_topic")
+    topic = os.getenv("NEWS_TOPIC", "unknown_topic")
     logger.info(f"Kafka topic: {topic}")
     return topic
 
 
 def get_kafka_consumer_group_id() -> int:
     """Fetch Kafka consumer group id from environment or use default."""
-    group_id: str = os.getenv("BUZZ_CONSUMER_GROUP_ID", "default_group")
+    group_id: str = os.getenv("NEWS_CONSUMER_GROUP_ID", "default_group")
     logger.info(f"Kafka consumer group id: {group_id}")
     return group_id
 
@@ -64,6 +68,42 @@ def get_kafka_consumer_group_id() -> int:
 # to ensure counts are integers
 # {author: count} author is the key and count is the value
 author_counts = defaultdict(int)
+
+
+
+#####################################
+# Initialize Sentiment Analysis
+######################################
+
+# Initialize sentiment status
+sentiment_status = 0.00
+thresholds = [-2, -1, 1, 2]
+
+last_alert_range = None
+
+message_counter = 0
+
+alert_messages = {
+    # very negative sentament
+    -2: "Hear ye, hear ye! The village is mourning the loss of several souls to a terrible illness; may God grant us strength in this trying time.",
+    
+    # slightly negative sentiment
+    -1: "Hear ye, hear ye! The Black Knight has been spotted near our borders; be prepared to defend your homes and loved ones.",
+    
+    # slightly positive sentiment
+    1: "Hear ye, hear ye! A bountiful harvest has been bestowed upon our town; let's gather in the town square for celebration and feasting.",
+    
+    # very positive sentiment
+    2: "Hear ye, hear ye! Lord Xavier is hosting a grand feast at his castle; all are invited to share in the merriment and revelry."
+}
+
+author_weights = {
+    "Isolde the Daft": 0.4,
+    "Eleanor the Fair": 0.5,
+    "Cedric Sunblade": 0.6,
+    "Tristan Cuthbert": 0.7,
+    "Alaric the Bold": 0.8
+}
 
 
 #####################################
@@ -97,8 +137,54 @@ def process_message(message: str) -> None:
             # Increment the count for the author
             author_counts[author] += 1
 
-            # Log the updated counts
-            logger.info(f"Updated author counts: {dict(author_counts)}")
+            # Perform sentiment analysis
+            news_headline = message_dict['message']
+            blob = TextBlob(news_headline)
+            sentiment_score = blob.sentiment.polarity
+  
+            # Apply author weight to the sentiment score
+            if author in author_weights:
+                weighted_sentiment = sentiment_score * author_weights[author]
+            else:
+                weighted_sentiment = sentiment_score
+  
+            # Update global sentiment status
+            global sentiment_status, last_alert_range, message_counter
+            sentiment_status += weighted_sentiment
+            sentiment_status = round(sentiment_status, 2)  # Ensure it's rounded
+
+            message_counter += 1
+
+            # Log author counts every 10 messages
+            if message_counter % 10 == 0:
+                total_author_count = sum(author_counts.values())
+                logger.info(f"Updated author counts: {dict(author_counts)}")
+                logger.info(f"Total count across all authors: {total_author_count}")
+
+            # Log the current sentiment status
+            logger.info(f"Current Sentiment Status: {sentiment_status}")
+  
+            # Determine the current range of sentiment_status
+            current_range = None
+            for threshold in thresholds:
+                if -1 >= sentiment_status > -2:
+                    current_range = -1
+                    break
+                if -2 >= sentiment_status:
+                    current_range = -2
+                    break
+                if 1 <= sentiment_status <= 2:
+                    current_range = 1
+                    break                             
+                elif 2 < sentiment_status:
+                    current_range = 2
+                    break
+  
+            # Trigger alert only if we are entering a new range
+            if current_range is not None and last_alert_range != current_range:
+                logger.warning(alert_messages[current_range])
+                last_alert_range = current_range
+
         else:
             logger.error(f"Expected a dictionary but got: {type(message_dict)}")
 

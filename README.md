@@ -1,4 +1,4 @@
-# buzzline-03-case
+# buzzline-03-gjrich
 
 Streaming data does not have to be simple text.
 Many of us are familiar with streaming video content and audio (e.g. music) files. 
@@ -9,10 +9,14 @@ semi-structured (e.g. json data).
 We'll work with two different types of data, and so we'll use two different Kafka topic names. 
 See [.env](.env). 
 
+The JSON based files have been modified from the original repo to generate fun Medieval news headlines as though from a wire. They are tracked in the consumer to perform Natural Language Processing and sentiment analysis.
+
+The CSV based files have been maintained for a smoker, but have been modified for functionality. The CSV has the temperature increase up to 210 degrees instead of plateau'ing at 142, and there are alerts for various meats commonly prepared in a smoker. The producer also detects to confirm the current temperatures are within the realm of reason - between freezing and 500 degrees.
+
 
 ## Task 1. Use Tools from Module 1 and 2
 
-Before starting, ensure you have completed the setup tasks in <https://github.com/denisecase/buzzline-01-case> and <https://github.com/denisecase/buzzline-02-case> first. 
+Before starting, ensure you have completed the setup tasks in <https://github.com/gjrich/buzzline-01-gjrich> and <https://github.com/gjrich/buzzline-02-gjrich> first. 
 Python 3.11 is required. 
 
 ## Task 2. Copy This Example Project and Rename
@@ -20,12 +24,12 @@ Python 3.11 is required.
 Once the tools are installed, copy/fork this project into your GitHub account
 and create your own version of this project to run and experiment with.
 Name it `buzzline-03-yourname` where yourname is something unique to you.
-Follow the instructions in [FORK-THIS-REPO.md](https://github.com/denisecase/buzzline-01-case/blob/main/docs/FORK-THIS-REPO.md).
+Follow the instructions in [FORK-THIS-REPO.md](https://github.com/gjrich/buzzline-01-gjrich/blob/main/docs/FORK-THIS-REPO.md).
     
 
 ## Task 3. Manage Local Project Virtual Environment
 
-Follow the instructions in [MANAGE-VENV.md](https://github.com/denisecase/buzzline-01-case/blob/main/docs/MANAGE-VENV.md) to:
+Follow the instructions in [MANAGE-VENV.md](https://github.com/gjrich/buzzline-01-gjrich/blob/main/docs/MANAGE-VENV.md) to:
 1. Create your .venv
 2. Activate .venv
 3. Install the required dependencies using requirements.txt.
@@ -35,8 +39,8 @@ Follow the instructions in [MANAGE-VENV.md](https://github.com/denisecase/buzzli
 If Zookeeper and Kafka are not already running, you'll need to restart them.
 See instructions at [SETUP-KAFKA.md] to:
 
-1. Start Zookeeper Service ([link](https://github.com/denisecase/buzzline-02-case/blob/main/docs/SETUP-KAFKA.md#step-7-start-zookeeper-service-terminal-1))
-2. Start Kafka ([link](https://github.com/denisecase/buzzline-02-case/blob/main/docs/SETUP-KAFKA.md#step-8-start-kafka-terminal-2))
+1. Start Zookeeper Service ([link](https://github.com/gjrich/buzzline-02-gjrich/blob/main/docs/SETUP-KAFKA.md#step-7-start-zookeeper-service-terminal-1))
+2. Start Kafka ([link](https://github.com/gjrich/buzzline-02-gjrich/blob/main/docs/SETUP-KAFKA.md#step-8-start-kafka-terminal-2))
 
 ## Task 5. Start a JSON Producer
 
@@ -47,13 +51,13 @@ Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.json_producer_case
+py -m producers.json_producer_gjrich
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m producers.json_producer_case
+python3 -m producers.json_producer_gjrich
 ```
 
 What did we name the topic used with JSON data? 
@@ -69,13 +73,13 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.json_consumer_case
+py -m consumers.json_consumer_gjrich
 ```
 
 Mac/Linux:
 ```zsh
 source .venv/bin/activate
-python3 -m consumers.json_consumer_case
+python3 -m consumers.json_consumer_gjrich
 ```
 
 What did we name the topic used with JSON data? 
