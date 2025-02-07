@@ -84,7 +84,7 @@ last_alert_range = None
 message_counter = 0
 
 alert_messages = {
-    # very negative sentament
+    # very negative sentiment
     -2: "Hear ye, hear ye! The village is mourning the loss of several souls to a terrible illness; may God grant us strength in this trying time.",
     
     # slightly negative sentiment

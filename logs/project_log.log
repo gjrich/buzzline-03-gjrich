@@ -5746,3 +5746,250 @@
 2025-02-06 21:41:53.668 | WARNING  | __main__:main:183 - Producer interrupted by user.
 2025-02-06 21:41:53.668 | INFO     | __main__:main:188 - Kafka producer closed.
 2025-02-06 21:41:53.697 | INFO     | __main__:main:190 - END producer.
+2025-02-06 21:52:09.119 | WARNING  | __main__:main:206 - Consumer interrupted by user.
+2025-02-06 21:52:09.127 | INFO     | __main__:main:211 - Kafka consumer for topic 'smoker_csv' closed.
+2025-02-06 21:52:12.005 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-06 21:52:13.820 | INFO     | __main__:main:210 - START consumer.
+2025-02-06 21:52:13.820 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: news_json
+2025-02-06 21:52:13.820 | INFO     | __main__:get_kafka_consumer_group_id:57 - Kafka consumer group id: news_group
+2025-02-06 21:52:13.820 | INFO     | __main__:main:215 - Consumer: Topic 'news_json' and group 'news_group'...
+2025-02-06 21:52:13.820 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:52:13.820 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='news_json' and group ID='news_group'.
+2025-02-06 21:52:13.933 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-06 21:52:13.933 | INFO     | __main__:main:221 - Polling messages from topic 'news_json'...
+2025-02-06 21:52:30.269 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-06 21:52:30.271 | INFO     | __main__:<module>:68 - Project root: C:\Projects\buzzline-03-gjrich
+2025-02-06 21:52:30.271 | INFO     | __main__:<module>:72 - Data folder: C:\Projects\buzzline-03-gjrich\data
+2025-02-06 21:52:30.271 | INFO     | __main__:<module>:76 - Data file: C:\Projects\buzzline-03-gjrich\data\news.json
+2025-02-06 21:52:30.271 | INFO     | __main__:main:136 - START producer.
+2025-02-06 21:52:30.271 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-06 21:52:30.281 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-06 21:52:30.281 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:52:30.618 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'RmpPw4FBTB6Y4DKFh50arw', 'controller_id': 1001}
+2025-02-06 21:52:30.618 | INFO     | __main__:get_kafka_topic:50 - Kafka topic: news_json
+2025-02-06 21:52:30.618 | INFO     | __main__:get_message_interval:57 - Message interval: 5 seconds
+2025-02-06 21:52:30.618 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:52:30.618 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-06 21:52:30.731 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-06 21:52:30.731 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:52:31.051 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'news_json' already exists. Clearing it out...
+2025-02-06 21:52:31.051 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:52:31.369 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'news_json': list indices must be integers or slices, not ConfigResource
+2025-02-06 21:52:31.372 | INFO     | __main__:main:159 - Kafka topic 'news_json' is ready.
+2025-02-06 21:52:31.372 | INFO     | __main__:main:165 - Starting message production to topic 'news_json'...
+2025-02-06 21:52:31.372 | INFO     | __main__:generate_messages:95 - Opening data file in read mode: C:\Projects\buzzline-03-gjrich\data\news.json
+2025-02-06 21:52:31.386 | INFO     | __main__:generate_messages:97 - Reading data from file: C:\Projects\buzzline-03-gjrich\data\news.json
+2025-02-06 21:52:31.388 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:52:31.391 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:52:31.391 | INFO     | __main__:process_message:135 - Message received from author: Tristan Cuthbert
+2025-02-06 21:52:31.441 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.0
+2025-02-06 21:52:36.389 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': "Sorceress's Love Potions Temporarily Transform Villagers into Animals, Chaos Ensues", 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:36.389 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': "Sorceress's Love Potions Temporarily Transform Villagers into Animals, Chaos Ensues", 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:36.389 | INFO     | __main__:process_message:135 - Message received from author: Eleanor the Fair
+2025-02-06 21:52:36.389 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.25
+2025-02-06 21:52:41.391 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Dragon Sightings Reported in Wales and Scotland, Local Lords Offer Bounties for Slayers', 'author': 'Cedric Sunblade'}
+2025-02-06 21:52:41.391 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Dragon Sightings Reported in Wales and Scotland, Local Lords Offer Bounties for Slayers', 'author': 'Cedric Sunblade'}
+2025-02-06 21:52:41.397 | INFO     | __main__:process_message:135 - Message received from author: Cedric Sunblade
+2025-02-06 21:52:41.397 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.25
+2025-02-06 21:52:46.395 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:46.395 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:46.395 | INFO     | __main__:process_message:135 - Message received from author: Eleanor the Fair
+2025-02-06 21:52:46.395 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.25
+2025-02-06 21:52:51.397 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': "Sorceress's Love Potions Temporarily Transform Villagers into Animals, Chaos Ensues", 'author': 'Isolde the Daft'}
+2025-02-06 21:52:51.397 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': "Sorceress's Love Potions Temporarily Transform Villagers into Animals, Chaos Ensues", 'author': 'Isolde the Daft'}
+2025-02-06 21:52:51.397 | INFO     | __main__:process_message:135 - Message received from author: Isolde the Daft
+2025-02-06 21:52:51.397 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.45
+2025-02-06 21:52:56.399 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Mysterious Comet Appears in the Sky, Superstition and Fear Sweep Across Europe', 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:56.399 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Mysterious Comet Appears in the Sky, Superstition and Fear Sweep Across Europe', 'author': 'Eleanor the Fair'}
+2025-02-06 21:52:56.399 | INFO     | __main__:process_message:135 - Message received from author: Eleanor the Fair
+2025-02-06 21:52:56.399 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.45
+2025-02-06 21:53:01.403 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': "Blacksmith Inventor Creates Unbreakable Sword for Noble's Daughter, Sparks Rivalry Among Suitors", 'author': 'Isolde the Daft'}
+2025-02-06 21:53:01.403 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': "Blacksmith Inventor Creates Unbreakable Sword for Noble's Daughter, Sparks Rivalry Among Suitors", 'author': 'Isolde the Daft'}
+2025-02-06 21:53:01.410 | INFO     | __main__:process_message:135 - Message received from author: Isolde the Daft
+2025-02-06 21:53:01.410 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.69
+2025-02-06 21:53:06.409 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Alchemist Claims to Turn Lead into Gold, Crowds Gather in Awe and Disbelief', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:06.409 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Alchemist Claims to Turn Lead into Gold, Crowds Gather in Awe and Disbelief', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:06.409 | INFO     | __main__:process_message:135 - Message received from author: Tristan Cuthbert
+2025-02-06 21:53:06.414 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.69
+2025-02-06 21:53:11.413 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:11.414 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:11.414 | INFO     | __main__:process_message:135 - Message received from author: Tristan Cuthbert
+2025-02-06 21:53:11.414 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.71
+2025-02-06 21:53:16.414 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Eleanor the Fair'}
+2025-02-06 21:53:16.414 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Eleanor the Fair'}
+2025-02-06 21:53:16.414 | INFO     | __main__:process_message:135 - Message received from author: Eleanor the Fair
+2025-02-06 21:53:16.414 | INFO     | __main__:process_message:161 - Updated author counts: {'Tristan Cuthbert': 3, 'Eleanor the Fair': 4, 'Cedric Sunblade': 1, 'Isolde the Daft': 2}
+2025-02-06 21:53:16.414 | INFO     | __main__:process_message:162 - Total count across all authors: 10
+2025-02-06 21:53:16.420 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.72
+2025-02-06 21:53:21.416 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Isolde the Daft'}
+2025-02-06 21:53:21.416 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Knights Errant Roam, Seeking Glory and Gold', 'author': 'Isolde the Daft'}
+2025-02-06 21:53:21.416 | INFO     | __main__:process_message:135 - Message received from author: Isolde the Daft
+2025-02-06 21:53:21.416 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.72
+2025-02-06 21:53:26.418 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Isolde the Daft'}
+2025-02-06 21:53:26.418 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Isolde the Daft'}
+2025-02-06 21:53:26.418 | INFO     | __main__:process_message:135 - Message received from author: Isolde the Daft
+2025-02-06 21:53:26.424 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.73
+2025-02-06 21:53:31.420 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Court Jester Suffers from Unusual Affliction: Laughter Fits!', 'author': 'Cedric Sunblade'}
+2025-02-06 21:53:31.421 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Court Jester Suffers from Unusual Affliction: Laughter Fits!', 'author': 'Cedric Sunblade'}
+2025-02-06 21:53:31.421 | INFO     | __main__:process_message:135 - Message received from author: Cedric Sunblade
+2025-02-06 21:53:31.425 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.62
+2025-02-06 21:53:36.422 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Alaric the Bold'}
+2025-02-06 21:53:36.422 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Witchfinder General Hunts Witches Across Rural England', 'author': 'Alaric the Bold'}
+2025-02-06 21:53:36.434 | INFO     | __main__:process_message:135 - Message received from author: Alaric the Bold
+2025-02-06 21:53:36.434 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.64
+2025-02-06 21:53:41.424 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': "Emperor's Newfangled Machine: The Printing Press, Arrives in Heidelberg!", 'author': 'Alaric the Bold'}
+2025-02-06 21:53:41.424 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': "Emperor's Newfangled Machine: The Printing Press, Arrives in Heidelberg!", 'author': 'Alaric the Bold'}
+2025-02-06 21:53:41.424 | INFO     | __main__:process_message:135 - Message received from author: Alaric the Bold
+2025-02-06 21:53:41.424 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.64
+2025-02-06 21:53:46.427 | INFO     | __main__:main:170 - Sent message to topic 'news_json': {'message': 'Alchemist Claims to Turn Lead into Gold, Crowds Gather in Awe and Disbelief', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:46.427 | INFO     | __main__:process_message:129 - Processed JSON message: {'message': 'Alchemist Claims to Turn Lead into Gold, Crowds Gather in Awe and Disbelief', 'author': 'Tristan Cuthbert'}
+2025-02-06 21:53:46.427 | INFO     | __main__:process_message:135 - Message received from author: Tristan Cuthbert
+2025-02-06 21:53:46.433 | INFO     | __main__:process_message:165 - Current Sentiment Status: 0.64
+2025-02-06 21:53:47.430 | WARNING  | __main__:main:228 - Consumer interrupted by user.
+2025-02-06 21:53:47.439 | INFO     | __main__:main:233 - Kafka consumer for topic 'news_json' closed.
+2025-02-06 21:53:47.439 | INFO     | __main__:main:235 - END consumer for topic 'news_json' and group 'news_group'.
+2025-02-06 21:53:50.252 | WARNING  | __main__:main:173 - Producer interrupted by user.
+2025-02-06 21:53:50.254 | INFO     | __main__:main:178 - Kafka producer closed.
+2025-02-06 21:53:50.254 | INFO     | __main__:main:180 - END producer.
+2025-02-06 21:54:01.417 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-06 21:54:01.433 | INFO     | __main__:main:184 - START consumer.
+2025-02-06 21:54:01.433 | INFO     | __main__:get_kafka_topic:46 - Kafka topic: smoker_csv
+2025-02-06 21:54:01.433 | INFO     | __main__:get_kafka_consumer_group_id:53 - Kafka consumer group id: smoker_group
+2025-02-06 21:54:01.433 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:01.433 | INFO     | __main__:main:190 - Consumer: Topic 'smoker_csv' and group 'smoker_group'...
+2025-02-06 21:54:01.437 | INFO     | __main__:main:191 - Rolling window size: 10
+2025-02-06 21:54:01.437 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:54:01.437 | INFO     | utils.utils_consumer:create_kafka_consumer:44 - Creating Kafka consumer. Topic='smoker_csv' and group ID='smoker_group'.
+2025-02-06 21:54:01.553 | INFO     | utils.utils_consumer:create_kafka_consumer:59 - Kafka consumer created successfully.
+2025-02-06 21:54:01.553 | INFO     | __main__:main:199 - Polling messages from topic 'smoker_csv'...
+2025-02-06 21:54:07.916 | INFO     | utils.utils_logger:<module>:38 - Logging to file: logs\project_log.log
+2025-02-06 21:54:07.916 | INFO     | __main__:<module>:79 - Project root: C:\Projects\buzzline-03-gjrich
+2025-02-06 21:54:07.916 | INFO     | __main__:<module>:83 - Data folder: C:\Projects\buzzline-03-gjrich\data
+2025-02-06 21:54:07.916 | INFO     | __main__:<module>:87 - Data file: C:\Projects\buzzline-03-gjrich\data\smoker_temps.csv
+2025-02-06 21:54:07.916 | INFO     | __main__:main:147 - START producer.
+2025-02-06 21:54:07.916 | INFO     | utils.utils_producer:get_zookeeper_address:57 - Zookeeper address: localhost:2181
+2025-02-06 21:54:07.937 | INFO     | utils.utils_producer:check_zookeeper_service_is_ready:79 - Zookeeper is ready at localhost:2181.
+2025-02-06 21:54:07.937 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:54:08.262 | INFO     | utils.utils_producer:check_kafka_service_is_ready:98 - Kafka is ready. Brokers: {'throttle_time_ms': 0, 'brokers': [{'node_id': 1001, 'host': 'localhost', 'port': 9092, 'rack': None}], 'cluster_id': 'RmpPw4FBTB6Y4DKFh50arw', 'controller_id': 1001}
+2025-02-06 21:54:08.262 | INFO     | __main__:get_kafka_topic:48 - Kafka topic: smoker_csv
+2025-02-06 21:54:08.262 | INFO     | __main__:get_message_interval:55 - Message interval: 5 seconds
+2025-02-06 21:54:08.262 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:54:08.262 | INFO     | utils.utils_producer:create_kafka_producer:146 - Connecting to Kafka broker at localhost:9092...
+2025-02-06 21:54:08.372 | INFO     | utils.utils_producer:create_kafka_producer:151 - Kafka producer successfully created.
+2025-02-06 21:54:08.372 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:54:08.688 | INFO     | utils.utils_producer:create_kafka_topic:172 - Topic 'smoker_csv' already exists. Clearing it out...
+2025-02-06 21:54:08.688 | INFO     | utils.utils_producer:get_kafka_broker_address:50 - Kafka broker address: localhost:9092
+2025-02-06 21:54:09.009 | ERROR    | utils.utils_producer:clear_kafka_topic:235 - Error managing retention for topic 'smoker_csv': list indices must be integers or slices, not ConfigResource
+2025-02-06 21:54:09.009 | INFO     | __main__:main:170 - Kafka topic 'smoker_csv' is ready.
+2025-02-06 21:54:09.018 | INFO     | __main__:main:176 - Starting message production to topic 'smoker_csv'...
+2025-02-06 21:54:09.018 | INFO     | __main__:generate_messages:106 - Opening data file in read mode: C:\Projects\buzzline-03-gjrich\data\smoker_temps.csv
+2025-02-06 21:54:09.018 | INFO     | __main__:generate_messages:108 - Reading data from file: C:\Projects\buzzline-03-gjrich\data\smoker_temps.csv
+2025-02-06 21:54:09.018 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:09.018266', 'temperature': 70.4}
+2025-02-06 21:54:09.030 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:09.018266', 'temperature': 70.4}
+2025-02-06 21:54:09.030 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:14.028 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:14.026022', 'temperature': 70.8}
+2025-02-06 21:54:14.028 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:14.026022', 'temperature': 70.8}
+2025-02-06 21:54:14.028 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:19.030 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:19.030080', 'temperature': 71.2}
+2025-02-06 21:54:19.030 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:19.030080', 'temperature': 71.2}
+2025-02-06 21:54:19.030 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:24.035 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:24.034798', 'temperature': 71.6}
+2025-02-06 21:54:24.038 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:24.034798', 'temperature': 71.6}
+2025-02-06 21:54:24.038 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:29.039 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:29.037910', 'temperature': 72.0}
+2025-02-06 21:54:29.039 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:29.037910', 'temperature': 72.0}
+2025-02-06 21:54:29.046 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:34.044 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:34.044323', 'temperature': 72.4}
+2025-02-06 21:54:34.044 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:34.044323', 'temperature': 72.4}
+2025-02-06 21:54:34.044 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:39.046 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:39.046555', 'temperature': 72.8}
+2025-02-06 21:54:39.046 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:39.046555', 'temperature': 72.8}
+2025-02-06 21:54:39.046 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:44.048 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:44.048538', 'temperature': 73.2}
+2025-02-06 21:54:44.051 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:44.048538', 'temperature': 73.2}
+2025-02-06 21:54:44.051 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:49.050 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:49.050402', 'temperature': 73.6}
+2025-02-06 21:54:49.054 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:49.050402', 'temperature': 73.6}
+2025-02-06 21:54:49.054 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:54.052 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:54.052852', 'temperature': 74.0}
+2025-02-06 21:54:54.054 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:54.052852', 'temperature': 74.0}
+2025-02-06 21:54:54.054 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:54.054 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:54:59.055 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:54:59.055376', 'temperature': 74.4}
+2025-02-06 21:54:59.067 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:54:59.055376', 'temperature': 74.4}
+2025-02-06 21:54:59.067 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:54:59.067 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:04.057 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:04.057460', 'temperature': 74.8}
+2025-02-06 21:55:04.057 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:04.057460', 'temperature': 74.8}
+2025-02-06 21:55:04.057 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:04.062 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:09.059 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:09.059401', 'temperature': 75.2}
+2025-02-06 21:55:09.059 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:09.059401', 'temperature': 75.2}
+2025-02-06 21:55:09.059 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:09.059 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:14.061 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:14.061552', 'temperature': 75.6}
+2025-02-06 21:55:14.068 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:14.061552', 'temperature': 75.6}
+2025-02-06 21:55:14.069 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:14.069 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:19.065 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:19.065594', 'temperature': 76.0}
+2025-02-06 21:55:19.065 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:19.065594', 'temperature': 76.0}
+2025-02-06 21:55:19.065 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:19.073 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:24.070 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:24.070340', 'temperature': 76.4}
+2025-02-06 21:55:24.070 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:24.070340', 'temperature': 76.4}
+2025-02-06 21:55:24.070 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:24.070 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:29.072 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:29.072783', 'temperature': 76.8}
+2025-02-06 21:55:29.076 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:29.072783', 'temperature': 76.8}
+2025-02-06 21:55:29.076 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:29.079 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:34.075 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:34.075903', 'temperature': 77.2}
+2025-02-06 21:55:34.075 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:34.075903', 'temperature': 77.2}
+2025-02-06 21:55:34.075 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:34.075 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:39.090 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:39.079350', 'temperature': 77.6}
+2025-02-06 21:55:39.092 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:39.079350', 'temperature': 77.6}
+2025-02-06 21:55:39.092 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:39.092 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:44.092 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:44.092710', 'temperature': 78.0}
+2025-02-06 21:55:44.092 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:44.092710', 'temperature': 78.0}
+2025-02-06 21:55:44.092 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:44.099 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:49.095 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:49.095956', 'temperature': 78.4}
+2025-02-06 21:55:49.095 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:49.095956', 'temperature': 78.4}
+2025-02-06 21:55:49.104 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:49.104 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:54.099 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:54.099861', 'temperature': 78.8}
+2025-02-06 21:55:54.102 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:54.099861', 'temperature': 78.8}
+2025-02-06 21:55:54.102 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:54.102 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:55:59.101 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:55:59.101491', 'temperature': 79.2}
+2025-02-06 21:55:59.104 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:55:59.101491', 'temperature': 79.2}
+2025-02-06 21:55:59.104 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:55:59.104 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:04.103 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:04.103471', 'temperature': 79.6}
+2025-02-06 21:56:04.103 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:56:04.103471', 'temperature': 79.6}
+2025-02-06 21:56:04.103 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:56:04.103 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:09.105 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:09.105747', 'temperature': 80.0}
+2025-02-06 21:56:09.109 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:56:09.105747', 'temperature': 80.0}
+2025-02-06 21:56:09.113 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:56:09.113 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:14.108 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:14.108893', 'temperature': 80.4}
+2025-02-06 21:56:14.108 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:56:14.108893', 'temperature': 80.4}
+2025-02-06 21:56:14.108 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:56:14.115 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:19.113 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:19.112479', 'temperature': 80.8}
+2025-02-06 21:56:19.117 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:56:19.112479', 'temperature': 80.8}
+2025-02-06 21:56:19.117 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:56:19.117 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:24.115 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:24.115049', 'temperature': 81.2}
+2025-02-06 21:56:24.117 | INFO     | __main__:process_message:127 - Processed JSON message: {'timestamp': '2025-02-07T03:56:24.115049', 'temperature': 81.2}
+2025-02-06 21:56:24.117 | INFO     | __main__:get_rolling_window_size:67 - Rolling window size: 10
+2025-02-06 21:56:24.121 | INFO     | __main__:get_stall_threshold:60 - Max stall temperature range: 0.2 F
+2025-02-06 21:56:26.861 | WARNING  | __main__:main:206 - Consumer interrupted by user.
+2025-02-06 21:56:26.868 | INFO     | __main__:main:211 - Kafka consumer for topic 'smoker_csv' closed.
+2025-02-06 21:56:29.118 | INFO     | __main__:main:180 - Sent message to topic 'smoker_csv': {'timestamp': '2025-02-07T03:56:29.118238', 'temperature': 81.6}
+2025-02-06 21:56:29.348 | WARNING  | __main__:main:183 - Producer interrupted by user.
+2025-02-06 21:56:29.351 | INFO     | __main__:main:188 - Kafka producer closed.
+2025-02-06 21:56:29.351 | INFO     | __main__:main:190 - END producer.
